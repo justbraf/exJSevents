@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="regForm"> 
+        Name: <input id="name" placeholder="john doe">
+        <br>
+        Choice:
+        <select>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+        <br>
+        <button type="submit">Register</button>
+    </form>
+
+
+    <script>
+        // This function waits until the DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("page loaded")
+            const registerBtn = document.querySelector("#regForm")
+            // add event to submit action of form
+            registerBtn.addEventListener("submit", function(event){
+                event.preventDefault() // stop form from refreshing page
+                validate()
+            })
+            console.log ("event added")
+        })
+        
+        function validate(){
+            const nameField = document.querySelector("#name").value
+            if (nameField.length == 0){
+                console.log("it's empty")
+            }
+            else
+            console.log("register button pressed")
+        }
+    </script>
+</body>
+</html>
