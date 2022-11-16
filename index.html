@@ -4,15 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js"></script>
 </head>
 
 <body>
-    <form id="regForm">
-        Name: <input id="name" placeholder="john doe">
+    <h1>Registration Form</h1>
+    <form>
+        First Name: <input placeholder="John">
+        Last Name: <input placeholder="Doe">
         <br>
-        Choice:
-        <select id="js-choice">
+        Tickets:
+        <select>
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -22,38 +26,6 @@
         <br>
         <button type="submit">Register</button>
     </form>
-
-
-    <script>
-        // This function waits until the DOM is ready
-        document.addEventListener('DOMContentLoaded', function () {
-            const registerBtn = document.querySelector("#regForm")
-            // add event to submit action of form
-            registerBtn.addEventListener("submit", function (event) {
-                event.preventDefault() // stop the form from performing default action and refreshing page
-                // necessary functions for validation
-                validate()
-            })
-        })
-
-        function validate() {
-            // get name input box object
-            const nameField = document.querySelector("#name")
-            // check length of name input value, 0 is empty
-            if (nameField.value.length == 0) {
-                console.log("it's empty")
-                // change colour if empty
-                nameField.style = "border: 2px solid red;  outline: none;"
-                nameField.focus()
-            }
-            else {
-                // else do something
-                console.log("register button pressed")
-                // restore colour when valid
-                nameField.style = "border: 1px solid black;"
-            }
-        }
-    </script>
 </body>
 
 </html>
