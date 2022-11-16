@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <form id="regForm"> 
+    <form id="regForm">
         Name: <input id="name" placeholder="john doe">
         <br>
         Choice:
-        <select>
+        <select id="js-choice">
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -24,24 +26,25 @@
 
     <script>
         // This function waits until the DOM is ready
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const registerBtn = document.querySelector("#regForm")
             // add event to submit action of form
-            registerBtn.addEventListener("submit", function(event){
+            registerBtn.addEventListener("submit", function (event) {
                 event.preventDefault() // stop the form from performing default action and refreshing page
                 // necessary functions for validation
                 validate()
             })
         })
-        
-        function validate(){
+
+        function validate() {
             // get name input box object
             const nameField = document.querySelector("#name")
             // check length of name input value, 0 is empty
-            if (nameField.value.length == 0){
+            if (nameField.value.length == 0) {
                 console.log("it's empty")
                 // change colour if empty
-                nameField.style = "border: 2px solid red;"
+                nameField.style = "border: 2px solid red;  outline: none;"
+                nameField.focus()
             }
             else {
                 // else do something
@@ -52,4 +55,5 @@
         }
     </script>
 </body>
+
 </html>
